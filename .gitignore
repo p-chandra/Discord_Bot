@@ -1,0 +1,12 @@
+.env
+
+*.log
+
+credentials.json
+token.json
+
+# ignore FFMPEG
+FFmpeg/
+
+__pycache__/
+*.pyc
