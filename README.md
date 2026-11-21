@@ -28,6 +28,11 @@ is disconnected and plays in its current voice channel if it is already connecte
 It needs **View Channel**, **Connect**, and **Speak** in the voice channel. Use
 `.leave` to disconnect.
 
+For YouTube fallback on `.play <song name>`, install `yt-dlp[default]` in the
+same Python environment and have a supported Node.js or Deno on PATH. Local
+MP3 matches take priority. Use YouTube playback for content you're authorized
+to stream. `.download` attaches local files only.
+
 Discord's documented bot interface does not support publishing a live webcam
 feed into a voice channel. To share the Pi camera in the call, join using the
 regular Discord client on a device that can access the camera and turn on
