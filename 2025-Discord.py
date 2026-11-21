@@ -176,7 +176,10 @@ async def play_voice_track(ctx, voice_client, track, *, stream_url):
         source = FFmpegPCMAudio(
             stream_url,
             executable=FFMPEG_PATH,
-            before_options="-rw_timeout 10000000",
+            before_options=(
+                "-rw_timeout 10000000 -reconnect 1 -reconnect_on_network_error 1 "
+                "-reconnect_streamed 1 -reconnect_delay_max 5 -reconnect_max_retries 3"
+            ),
         )
         voice_client.stop()
         voice_client.play(source)
